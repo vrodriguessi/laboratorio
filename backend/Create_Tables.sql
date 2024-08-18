@@ -185,11 +185,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Exame`
 -- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Table `mydb`.`Exame`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Exame` (
   `ID` VARCHAR(6) NOT NULL,
   `Descricao` VARCHAR(1000) NOT NULL,
   `Setor` VARCHAR(5) NOT NULL,
-  `Preco` DECIMAL(10,2) NOT NULL,
+  `Preco` DECIMAL(10,2) NOT NULL DEFAULT 50.00, -- Valor padrão definido
   `Nome` VARCHAR(30) NOT NULL,
   `Orientacoes` VARCHAR(1000) NOT NULL,
   `Unidade_CNPJ` CHAR(14) NOT NULL,
@@ -199,9 +202,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exame` (
     FOREIGN KEY (`Unidade_CNPJ`)
     REFERENCES `mydb`.`Unidade` (`CNPJ`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+    ON UPDATE NO ACTION
+) ENGINE=InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`TelefoneUnidade`
