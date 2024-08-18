@@ -1,6 +1,6 @@
 -- Excluir dados de uma tabela
 DELETE FROM `Funcionario`
-WHERE `Nome` = 'Carlos Santos';
+WHERE `Nome` = 'Carlos Oliveira';
 
 -- Excluir dados em duas tabelas (aninhado)
 DELETE FROM `Paciente`
