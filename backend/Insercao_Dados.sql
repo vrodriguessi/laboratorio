@@ -1,3 +1,5 @@
+USE mydb;
+
 -- -----------------------------------------------------
 -- Inserindo dados na tabela `Solicitante`
 -- -----------------------------------------------------
@@ -155,3 +157,76 @@ VALUES
 ('12345678000113', 'Unidade 13', 'Rua 113', 'Bairro 113', 'Cidade 113', 'Estado 113', '22222233', 213, '12345678000113'),
 ('12345678000114', 'Unidade 14', 'Rua 114', 'Bairro 114', 'Cidade 114', 'Estado 114', '22222234', 214, '12345678000114'),
 ('12345678000115', 'Unidade 15', 'Rua 115', 'Bairro 115', 'Cidade 115', 'Estado 115', '22222235', 215, '12345678000115');
+
+-- Inserções na tabela Prontuario
+INSERT INTO `mydb`.`Prontuario` (`ID`, `Paciente_CPF`, `Data`, `Diagnóstico`) VALUES
+(1, '98765432100', '2024-08-01', 'Diagnóstico A'),
+(2, '98765432101', '2024-08-02', 'Diagnóstico B'),
+(3, '98765432102', '2024-08-03', 'Diagnóstico C'),
+(4, '98765432103', '2024-08-04', 'Diagnóstico D'),
+(5, '98765432104', '2024-08-05', 'Diagnóstico E'),
+(6, '98765432105', '2024-08-06', 'Diagnóstico F'),
+(7, '98765432106', '2024-08-07', 'Diagnóstico G'),
+(8, '98765432107', '2024-08-08', 'Diagnóstico H'),
+(9, '98765432108', '2024-08-09', 'Diagnóstico I'),
+(10, '98765432109', '2024-08-10', 'Diagnóstico J'),
+(11, '98765432110', '2024-08-11', 'Diagnóstico K'),
+(12, '98765432111', '2024-08-12', 'Diagnóstico L'),
+(13, '98765432112', '2024-08-13', 'Diagnóstico M'),
+(14, '98765432113', '2024-08-14', 'Diagnóstico N'),
+(15, '98765432114', '2024-08-15', 'Diagnóstico O');
+
+-- Inserções na tabela Exame
+INSERT INTO `mydb`.`Exame` (`ID`, `Descricao`, `Setor`, `Preco`, `Nome`, `Orientacoes`, `Unidade_CNPJ`) VALUES
+('EX001', 'Exame de Sangue Completo', 'LAB', 70.00, 'Hemograma', 'Jejum de 12 horas', '12345678901234'),
+('EX002', 'Exame de Urina', 'LAB', 70.00, 'Urocultura', 'Coletar a primeira urina da manhã', '12345678901234'),
+('EX003', 'Ultrassonografia Abdominal', 'IMAG', 70.00, 'Ultrassom Abdominal', 'Não comer 6 horas antes do exame', '12345678901234'),
+('EX004', 'Exame de Colesterol', 'LAB', 70.00, 'Perfil Lipídico', 'Jejum de 12 horas', '23456789012345'),
+('EX005', 'Exame de Glicemia', 'LAB', 70.00, 'Glicemia em Jejum', 'Jejum de 8 horas', '23456789012345'),
+('EX006', 'Radiografia Torácica', 'IMAG', 70.00, 'Raio-X do Tórax', 'Sem preparação necessária', '23456789012345'),
+('EX007', 'Teste de Função Hepática', 'LAB', 70.00, 'Função Hepática', 'Não comer alimentos gordurosos 24 horas antes', '34567890123456'),
+('EX008', 'Eletrocardiograma', 'LAB', 70.00, 'ECG', 'Descansar por 10 minutos antes do exame', '34567890123456'),
+('EX009', 'Tomografia Computadorizada', 'IMAG', 70.00, 'Tomografia', 'Não comer 4 horas antes do exame', '34567890123456'),
+('EX010', 'Exame de Prostatectomia', 'LAB', 70.00, 'Antígeno Prostático', 'Jejum de 8 horas', '45678901234567'),
+('EX011', 'Exame de Função Renal', 'LAB', 70.00, 'Creatinina e Ureia', 'Jejum de 8 horas', '45678901234567'),
+('EX012', 'Ultrassonografia do Coração', 'IMAG', 70.00, 'Ecocardiograma', 'Não comer 2 horas antes do exame', '45678901234567'),
+('EX013', 'Exame de Vitamina D', 'LAB', 70.00, '25-Hidroxivitamina D', 'Sem preparação necessária', '56789012345678'),
+('EX014', 'Exame de Hormônios', 'LAB', 70.00, 'Perfil Hormonal', 'Jejum de 8 horas', '56789012345678'),
+('EX015', 'Ressonância Magnética', 'IMAG', 70.00, 'RM', 'Não comer 4 horas antes do exame', '56789012345678');
+
+-- Inserções na tabela Composto por
+INSERT INTO `mydb`.`Composto por` (`Prontuario_ID`, `Exame_ID`, `PrecoPago`) VALUES
+(1, 'EX001', 80.00),
+(1, 'EX002', 70.00),
+(1, 'EX003', 90.00),
+(2, 'EX004', 85.00),
+(2, 'EX005', 75.00),
+(2, 'EX006', 95.00),
+(3, 'EX007', 80.00),
+(3, 'EX008', 70.00),
+(3, 'EX009', 85.00),
+(4, 'EX010', 90.00),
+(4, 'EX011', 75.00),
+(4, 'EX012', 80.00),
+(5, 'EX013', 85.00),
+(5, 'EX014', 95.00),
+(5, 'EX015', 100.00);
+
+-- Inserções na tabela Trabalha em
+INSERT INTO `mydb`.`Trabalha em` (`Unidade_CNPJ`, `Funcionario_CPF`) VALUES
+('12345678000100', '11111111111'),
+('12345678000101', '11111111112'),
+('12345678000102', '11111111113'),
+('12345678000103', '11111111114'),
+('12345678000104', '11111111115'),
+('12345678000105', '11111111116'),
+('12345678000106', '11111111117'),
+('12345678000107', '11111111118'),
+('12345678000108', '11111111119'),
+('12345678000109', '11111111120'),
+('12345678000110', '11111111121'),
+('12345678000111', '11111111122'),
+('12345678000112', '11111111123'),
+('12345678000113', '11111111124'),
+('12345678000114', '11111111125');
+
