@@ -8,7 +8,7 @@ INSERT INTO `mydb`.`Solicitante` (`CPF`, `CRM`, `Nome`, `Logradouro`, `Bairro`, 
 ('12345678902', 100002, 'Bruno Silva', 'Rua B', 'Bairro B', 'Cidade B', 'Estado B', '23456789', 2),
 ('12345678903', 100003, 'Carlos Oliveira', 'Rua C', 'Bairro C', 'Cidade C', 'Estado C', '34567890', 3),
 ('12345678904', 100004, 'Diana Pereira', 'Rua D', 'Bairro D', 'Cidade D', 'Estado D', '45678901', 4),
-('12345678905', 100005, 'João Santos', 'Rua E', 'Bairro E', 'Cidade E', 'Estado E', '56789012', 5),
+('12345678905', 100005, 'Eduardo Santos', 'Rua E', 'Bairro E', 'Cidade E', 'Estado E', '56789012', 5),
 ('12345678906', 100006, 'Fernanda Lima', 'Rua F', 'Bairro F', 'Cidade F', 'Estado F', '67890123', 6),
 ('12345678907', 100007, 'Gabriel Martins', 'Rua G', 'Bairro G', 'Cidade G', 'Estado G', '78901234', 7),
 ('12345678908', 100008, 'Helena Rocha', 'Rua H', 'Bairro H', 'Cidade H', 'Estado H', '89012345', 8),
@@ -108,55 +108,55 @@ INSERT INTO `mydb`.`Funcionario` (`CPF`, `ID`, `SenhaDeAcesso`, `Salario`, `Nome
 -- Inserções na tabela Laboratorio
 INSERT INTO `Laboratorio` (CNPJ, NomeFantasia, RazaoSocial, TipoLaboratorio, Logradouro, Bairro, Cidade, Estado, CEP, Numero)
 VALUES 
-('12345678000101', 'Lab A', 'Laboratório A Ltda', 'matriz', 'Rua D', 'Bairro D', 'Cidade D', 'Estado D', '00000001', 101),
-('12345678000102', 'Lab B', 'Laboratório B Ltda', 'apoio', 'Rua E', 'Bairro E', 'Cidade E', 'Estado E', '00000002', 102),
-('12345678000103', 'Lab C', 'Laboratório C Ltda', 'matriz', 'Rua F', 'Bairro F', 'Cidade F', 'Estado F', '00000003', 103),
-('12345678000104', 'Lab D', 'Laboratório D Ltda', 'apoio', 'Rua G', 'Bairro G', 'Cidade G', 'Estado G', '00000004', 104),
-('12345678000105', 'Lab E', 'Laboratório E Ltda', 'matriz', 'Rua H', 'Bairro H', 'Cidade H', 'Estado H', '00000005', 105),
-('12345678000106', 'Lab F', 'Laboratório F Ltda', 'apoio', 'Rua I', 'Bairro I', 'Cidade I', 'Estado I', '00000006', 106),
-('12345678000107', 'Lab G', 'Laboratório G Ltda', 'matriz', 'Rua J', 'Bairro J', 'Cidade J', 'Estado J', '00000007', 107),
-('12345678000108', 'Lab H', 'Laboratório H Ltda', 'apoio', 'Rua K', 'Bairro K', 'Cidade K', 'Estado K', '00000008', 108),
-('12345678000109', 'Lab I', 'Laboratório I Ltda', 'matriz', 'Rua L', 'Bairro L', 'Cidade L', 'Estado L', '00000009', 109),
-('12345678000110', 'Lab J', 'Laboratório J Ltda', 'apoio', 'Rua M', 'Bairro M', 'Cidade M', 'Estado M', '00000010', 110),
-('12345678000111', 'Lab K', 'Laboratório K Ltda', 'matriz', 'Rua N', 'Bairro N', 'Cidade N', 'Estado N', '00000011', 111),
-('12345678000112', 'Lab L', 'Laboratório L Ltda', 'apoio', 'Rua O', 'Bairro O', 'Cidade O', 'Estado O', '00000012', 112),
-('12345678000113', 'Lab M', 'Laboratório M Ltda', 'matriz', 'Rua P', 'Bairro P', 'Cidade P', 'Estado P', '00000013', 113),
-('12345678000114', 'Lab N', 'Laboratório N Ltda', 'apoio', 'Rua Q', 'Bairro Q', 'Cidade Q', 'Estado Q', '00000014', 114),
-('12345678000115', 'Lab O', 'Laboratório O Ltda', 'matriz', 'Rua R', 'Bairro R', 'Cidade R', 'Estado R', '00000015', 115),
-('12345678000116', 'Lab P', 'Laboratório P Ltda', 'apoio', 'Rua S', 'Bairro S', 'Cidade S', 'Estado S', '00000016', 116),
-('12345678000117', 'Lab Q', 'Laboratório Q Ltda', 'matriz', 'Rua T', 'Bairro T', 'Cidade T', 'Estado T', '00000017', 117),
-('12345678000118', 'Lab R', 'Laboratório R Ltda', 'apoio', 'Rua U', 'Bairro U', 'Cidade U', 'Estado U', '00000018', 118),
-('12345678000119', 'Lab S', 'Laboratório S Ltda', 'matriz', 'Rua V', 'Bairro V', 'Cidade V', 'Estado V', '00000019', 119),
-('12345678000120', 'Lab T', 'Laboratório T Ltda', 'apoio', 'Rua W', 'Bairro W', 'Cidade W', 'Estado W', '00000020', 120),
-('12345678000121', 'Lab U', 'Laboratório U Ltda', 'matriz', 'Rua X', 'Bairro X', 'Cidade X', 'Estado X', '00000021', 121),
-('12345678000122', 'Lab V', 'Laboratório V Ltda', 'apoio', 'Rua Y', 'Bairro Y', 'Cidade Y', 'Estado Y', '00000022', 122),
-('12345678000123', 'Lab W', 'Laboratório W Ltda', 'matriz', 'Rua Z', 'Bairro Z', 'Cidade Z', 'Estado Z', '00000023', 123),
-('12345678000124', 'Lab X', 'Laboratório X Ltda', 'apoio', 'Rua AA', 'Bairro AA', 'Cidade AA', 'Estado AA', '00000024', 124),
-('12345678000125', 'Lab Y', 'Laboratório Y Ltda', 'matriz', 'Rua AB', 'Bairro AB', 'Cidade AB', 'Estado AB', '00000025', 125),
-('12345678000126', 'Lab Z', 'Laboratório Z Ltda', 'apoio', 'Rua AC', 'Bairro AC', 'Cidade AC', 'Estado AC', '00000026', 126),
-('12345678000127', 'Lab AA', 'Laboratório AA Ltda', 'matriz', 'Rua AD', 'Bairro AD', 'Cidade AD', 'Estado AD', '00000027', 127),
-('12345678000128', 'Lab AB', 'Laboratório AB Ltda', 'apoio', 'Rua AE', 'Bairro AE', 'Cidade AE', 'Estado AE', '00000028', 128),
-('12345678000129', 'Lab AC', 'Laboratório AC Ltda', 'matriz', 'Rua AF', 'Bairro AF', 'Cidade AF', 'Estado AF', '00000029', 129),
-('12345678000130', 'Lab AD', 'Laboratório AD Ltda', 'apoio', 'Rua AG', 'Bairro AG', 'Cidade AG', 'Estado AG', '00000030', 130);
+('32345678000101', 'Lab A', 'Laboratório A Ltda', 'matriz', 'Rua D', 'Bairro D', 'Cidade D', 'Estado D', '00000001', 101),
+('32345678000102', 'Lab B', 'Laboratório B Ltda', 'apoio', 'Rua E', 'Bairro E', 'Cidade E', 'Estado E', '00000002', 102),
+('32345678000103', 'Lab C', 'Laboratório C Ltda', 'matriz', 'Rua F', 'Bairro F', 'Cidade F', 'Estado F', '00000003', 103),
+('32345678000104', 'Lab D', 'Laboratório D Ltda', 'apoio', 'Rua G', 'Bairro G', 'Cidade G', 'Estado G', '00000004', 104),
+('32345678000105', 'Lab E', 'Laboratório E Ltda', 'matriz', 'Rua H', 'Bairro H', 'Cidade H', 'Estado H', '00000005', 105),
+('32345678000106', 'Lab F', 'Laboratório F Ltda', 'apoio', 'Rua I', 'Bairro I', 'Cidade I', 'Estado I', '00000006', 106),
+('32345678000107', 'Lab G', 'Laboratório G Ltda', 'matriz', 'Rua J', 'Bairro J', 'Cidade J', 'Estado J', '00000007', 107),
+('32345678000108', 'Lab H', 'Laboratório H Ltda', 'apoio', 'Rua K', 'Bairro K', 'Cidade K', 'Estado K', '00000008', 108),
+('32345678000109', 'Lab I', 'Laboratório I Ltda', 'matriz', 'Rua L', 'Bairro L', 'Cidade L', 'Estado L', '00000009', 109),
+('32345678000110', 'Lab J', 'Laboratório J Ltda', 'apoio', 'Rua M', 'Bairro M', 'Cidade M', 'Estado M', '00000010', 110),
+('32345678000111', 'Lab K', 'Laboratório K Ltda', 'matriz', 'Rua N', 'Bairro N', 'Cidade N', 'Estado N', '00000011', 111),
+('32345678000112', 'Lab L', 'Laboratório L Ltda', 'apoio', 'Rua O', 'Bairro O', 'Cidade O', 'Estado O', '00000012', 112),
+('32345678000113', 'Lab M', 'Laboratório M Ltda', 'matriz', 'Rua P', 'Bairro P', 'Cidade P', 'Estado P', '00000013', 113),
+('32345678000114', 'Lab N', 'Laboratório N Ltda', 'apoio', 'Rua Q', 'Bairro Q', 'Cidade Q', 'Estado Q', '00000014', 114),
+('32345678000115', 'Lab O', 'Laboratório O Ltda', 'matriz', 'Rua R', 'Bairro R', 'Cidade R', 'Estado R', '00000015', 115),
+('32345678000116', 'Lab P', 'Laboratório P Ltda', 'apoio', 'Rua S', 'Bairro S', 'Cidade S', 'Estado S', '00000016', 116),
+('32345678000117', 'Lab Q', 'Laboratório Q Ltda', 'matriz', 'Rua T', 'Bairro T', 'Cidade T', 'Estado T', '00000017', 117),
+('32345678000118', 'Lab R', 'Laboratório R Ltda', 'apoio', 'Rua U', 'Bairro U', 'Cidade U', 'Estado U', '00000018', 118),
+('32345678000119', 'Lab S', 'Laboratório S Ltda', 'matriz', 'Rua V', 'Bairro V', 'Cidade V', 'Estado V', '00000019', 119),
+('32345678000120', 'Lab T', 'Laboratório T Ltda', 'apoio', 'Rua W', 'Bairro W', 'Cidade W', 'Estado W', '00000020', 120),
+('32345678000121', 'Lab U', 'Laboratório U Ltda', 'matriz', 'Rua X', 'Bairro X', 'Cidade X', 'Estado X', '00000021', 121),
+('32345678000122', 'Lab V', 'Laboratório V Ltda', 'apoio', 'Rua Y', 'Bairro Y', 'Cidade Y', 'Estado Y', '00000022', 122),
+('32345678000123', 'Lab W', 'Laboratório W Ltda', 'matriz', 'Rua Z', 'Bairro Z', 'Cidade Z', 'Estado Z', '00000023', 123),
+('32345678000124', 'Lab X', 'Laboratório X Ltda', 'apoio', 'Rua AA', 'Bairro AA', 'Cidade AA', 'Estado AA', '00000024', 124),
+('32345678000125', 'Lab Y', 'Laboratório Y Ltda', 'matriz', 'Rua AB', 'Bairro AB', 'Cidade AB', 'Estado AB', '00000025', 125),
+('32345678000126', 'Lab Z', 'Laboratório Z Ltda', 'apoio', 'Rua AC', 'Bairro AC', 'Cidade AC', 'Estado AC', '00000026', 126),
+('32345678000127', 'Lab AA', 'Laboratório AA Ltda', 'matriz', 'Rua AD', 'Bairro AD', 'Cidade AD', 'Estado AD', '00000027', 127),
+('32345678000128', 'Lab AB', 'Laboratório AB Ltda', 'apoio', 'Rua AE', 'Bairro AE', 'Cidade AE', 'Estado AE', '00000028', 128),
+('32345678000129', 'Lab AC', 'Laboratório AC Ltda', 'matriz', 'Rua AF', 'Bairro AF', 'Cidade AF', 'Estado AF', '00000029', 129),
+('32345678000130', 'Lab AD', 'Laboratório AD Ltda', 'apoio', 'Rua AG', 'Bairro AG', 'Cidade AG', 'Estado AG', '00000030', 130);
 
 -- Inserções na tabela Unidade
 INSERT INTO `Unidade` (CNPJ, Nome, Logradouro, Bairro, Cidade, Estado, CEP, Numero, Laboratorio_CNPJ)
 VALUES
-('12345678000101', 'Unidade 1', 'Rua 101', 'Bairro 101', 'Cidade 101', 'Estado 101', '22222221', 201, '12345678000101'),
-('12345678000102', 'Unidade 2', 'Rua 102', 'Bairro 102', 'Cidade 102', 'Estado 102', '22222222', 202, '12345678000102'),
-('12345678000103', 'Unidade 3', 'Rua 103', 'Bairro 103', 'Cidade 103', 'Estado 103', '22222223', 203, '12345678000103'),
-('12345678000104', 'Unidade 4', 'Rua 104', 'Bairro 104', 'Cidade 104', 'Estado 104', '22222224', 204, '12345678000104'),
-('12345678000105', 'Unidade 5', 'Rua 105', 'Bairro 105', 'Cidade 105', 'Estado 105', '22222225', 205, '12345678000105'),
-('12345678000106', 'Unidade 6', 'Rua 106', 'Bairro 106', 'Cidade 106', 'Estado 106', '22222226', 206, '12345678000106'),
-('12345678000107', 'Unidade 7', 'Rua 107', 'Bairro 107', 'Cidade 107', 'Estado 107', '22222227', 207, '12345678000107'),
-('12345678000108', 'Unidade 8', 'Rua 108', 'Bairro 108', 'Cidade 108', 'Estado 108', '22222228', 208, '12345678000108'),
-('12345678000109', 'Unidade 9', 'Rua 109', 'Bairro 109', 'Cidade 109', 'Estado 109', '22222229', 209, '12345678000109'),
-('12345678000110', 'Unidade 10', 'Rua 110', 'Bairro 110', 'Cidade 110', 'Estado 110', '22222230', 210, '12345678000110'),
-('12345678000111', 'Unidade 11', 'Rua 111', 'Bairro 111', 'Cidade 111', 'Estado 111', '22222231', 211, '12345678000111'),
-('12345678000112', 'Unidade 12', 'Rua 112', 'Bairro 112', 'Cidade 112', 'Estado 112', '22222232', 212, '12345678000112'),
-('12345678000113', 'Unidade 13', 'Rua 113', 'Bairro 113', 'Cidade 113', 'Estado 113', '22222233', 213, '12345678000113'),
-('12345678000114', 'Unidade 14', 'Rua 114', 'Bairro 114', 'Cidade 114', 'Estado 114', '22222234', 214, '12345678000114'),
-('12345678000115', 'Unidade 15', 'Rua 115', 'Bairro 115', 'Cidade 115', 'Estado 115', '22222235', 215, '12345678000115');
+('12345678000101', 'Unidade 1', 'Rua 101', 'Bairro 101', 'Cidade 101', 'Estado 101', '22222221', 201, '32345678000101'),
+('12345678000102', 'Unidade 2', 'Rua 102', 'Bairro 102', 'Cidade 102', 'Estado 102', '22222222', 202, '32345678000102'),
+('12345678000103', 'Unidade 3', 'Rua 103', 'Bairro 103', 'Cidade 103', 'Estado 103', '22222223', 203, '32345678000103'),
+('12345678000104', 'Unidade 4', 'Rua 104', 'Bairro 104', 'Cidade 104', 'Estado 104', '22222224', 204, '32345678000104'),
+('12345678000105', 'Unidade 5', 'Rua 105', 'Bairro 105', 'Cidade 105', 'Estado 105', '22222225', 205, '32345678000105'),
+('12345678000106', 'Unidade 6', 'Rua 106', 'Bairro 106', 'Cidade 106', 'Estado 106', '22222226', 206, '32345678000106'),
+('12345678000107', 'Unidade 7', 'Rua 107', 'Bairro 107', 'Cidade 107', 'Estado 107', '22222227', 207, '32345678000107'),
+('12345678000108', 'Unidade 8', 'Rua 108', 'Bairro 108', 'Cidade 108', 'Estado 108', '22222228', 208, '32345678000108'),
+('12345678000109', 'Unidade 9', 'Rua 109', 'Bairro 109', 'Cidade 109', 'Estado 109', '22222229', 209, '32345678000109'),
+('12345678000110', 'Unidade 10', 'Rua 110', 'Bairro 110', 'Cidade 110', 'Estado 110', '22222230', 210, '32345678000110'),
+('12345678000111', 'Unidade 11', 'Rua 111', 'Bairro 111', 'Cidade 111', 'Estado 111', '22222231', 211, '32345678000111'),
+('12345678000112', 'Unidade 12', 'Rua 112', 'Bairro 112', 'Cidade 112', 'Estado 112', '22222232', 212, '32345678000112'),
+('12345678000113', 'Unidade 13', 'Rua 113', 'Bairro 113', 'Cidade 113', 'Estado 113', '22222233', 213, '32345678000113'),
+('12345678000114', 'Unidade 14', 'Rua 114', 'Bairro 114', 'Cidade 114', 'Estado 114', '22222234', 214, '32345678000114'),
+('12345678000115', 'Unidade 15', 'Rua 115', 'Bairro 115', 'Cidade 115', 'Estado 115', '22222235', 215, '32345678000115');
 
 -- Inserções na tabela Prontuario
 INSERT INTO `mydb`.`Prontuario` (`ID`, `DataDeCadastro`, `Solicitante_CPF`, `Paciente_CPF`, `Funcionario_CPF`) VALUES
@@ -178,21 +178,21 @@ INSERT INTO `mydb`.`Prontuario` (`ID`, `DataDeCadastro`, `Solicitante_CPF`, `Pac
 
 -- Inserções na tabela Exame
 INSERT INTO `mydb`.`Exame` (`ID`, `Descricao`, `Setor`, `Preco`, `Nome`, `Orientacoes`, `Unidade_CNPJ`) VALUES
-('EX001', 'Exame de Sangue Completo', 'LAB', 70.00, 'Hemograma', 'Jejum de 12 horas', '12345678901234'),
-('EX002', 'Exame de Urina', 'LAB', 70.00, 'Urocultura', 'Coletar a primeira urina da manhã', '12345678901234'),
-('EX003', 'Ultrassonografia Abdominal', 'IMAG', 70.00, 'Ultrassom Abdominal', 'Não comer 6 horas antes do exame', '12345678901234'),
-('EX004', 'Exame de Colesterol', 'LAB', 70.00, 'Perfil Lipídico', 'Jejum de 12 horas', '23456789012345'),
-('EX005', 'Exame de Glicemia', 'LAB', 70.00, 'Glicemia em Jejum', 'Jejum de 8 horas', '23456789012345'),
-('EX006', 'Radiografia Torácica', 'IMAG', 70.00, 'Raio-X do Tórax', 'Sem preparação necessária', '23456789012345'),
-('EX007', 'Teste de Função Hepática', 'LAB', 70.00, 'Função Hepática', 'Não comer alimentos gordurosos 24 horas antes', '34567890123456'),
-('EX008', 'Eletrocardiograma', 'LAB', 70.00, 'ECG', 'Descansar por 10 minutos antes do exame', '34567890123456'),
-('EX009', 'Tomografia Computadorizada', 'IMAG', 70.00, 'Tomografia', 'Não comer 4 horas antes do exame', '34567890123456'),
-('EX010', 'Exame de Prostatectomia', 'LAB', 70.00, 'Antígeno Prostático', 'Jejum de 8 horas', '45678901234567'),
-('EX011', 'Exame de Função Renal', 'LAB', 70.00, 'Creatinina e Ureia', 'Jejum de 8 horas', '45678901234567'),
-('EX012', 'Ultrassonografia do Coração', 'IMAG', 70.00, 'Ecocardiograma', 'Não comer 2 horas antes do exame', '45678901234567'),
-('EX013', 'Exame de Vitamina D', 'LAB', 70.00, '25-Hidroxivitamina D', 'Sem preparação necessária', '56789012345678'),
-('EX014', 'Exame de Hormônios', 'LAB', 70.00, 'Perfil Hormonal', 'Jejum de 8 horas', '56789012345678'),
-('EX015', 'Ressonância Magnética', 'IMAG', 70.00, 'RM', 'Não comer 4 horas antes do exame', '56789012345678');
+('EX001', 'Exame de Sangue Completo', 'LAB', 70.00, 'Hemograma', 'Jejum de 12 horas', '12345678000101'),
+('EX002', 'Exame de Urina', 'LAB', 70.00, 'Urocultura', 'Coletar a primeira urina da manhã', '12345678000102'),
+('EX003', 'Ultrassonografia Abdominal', 'IMAG', 70.00, 'Ultrassom Abdominal', 'Não comer 6 horas antes do exame', '12345678000103'),
+('EX004', 'Exame de Colesterol', 'LAB', 70.00, 'Perfil Lipídico', 'Jejum de 12 horas', '12345678000104'),
+('EX005', 'Exame de Glicemia', 'LAB', 70.00, 'Glicemia em Jejum', 'Jejum de 8 horas', '12345678000101'),
+('EX006', 'Radiografia Torácica', 'IMAG', 70.00, 'Raio-X do Tórax', 'Sem preparação necessária', '12345678000101'),
+('EX007', 'Teste de Função Hepática', 'LAB', 70.00, 'Função Hepática', 'Não comer alimentos gordurosos 24 horas antes', '12345678000103'),
+('EX008', 'Eletrocardiograma', 'LAB', 70.00, 'ECG', 'Descansar por 10 minutos antes do exame', '12345678000101'),
+('EX009', 'Tomografia Computadorizada', 'IMAG', 70.00, 'Tomografia', 'Não comer 4 horas antes do exame', '12345678000101'),
+('EX010', 'Exame de Prostatectomia', 'LAB', 70.00, 'Antígeno Prostático', 'Jejum de 8 horas', '12345678000101'),
+('EX011', 'Exame de Função Renal', 'LAB', 70.00, 'Creatinina e Ureia', 'Jejum de 8 horas', '12345678000102'),
+('EX012', 'Ultrassonografia do Coração', 'IMAG', 70.00, 'Ecocardiograma', 'Não comer 2 horas antes do exame', '12345678000101'),
+('EX013', 'Exame de Vitamina D', 'LAB', 70.00, '25-Hidroxivitamina D', 'Sem preparação necessária', '12345678000104'),
+('EX014', 'Exame de Hormônios', 'LAB', 70.00, 'Perfil Hormonal', 'Jejum de 8 horas', '12345678000105'),
+('EX015', 'Ressonância Magnética', 'IMAG', 70.00, 'RM', 'Não comer 4 horas antes do exame', '12345678000107');
 
 -- Inserções na tabela Composto por
 INSERT INTO `mydb`.`Composto por` (`Prontuario_ID`, `Exame_ID`, `PrecoPago`) VALUES
@@ -214,7 +214,6 @@ INSERT INTO `mydb`.`Composto por` (`Prontuario_ID`, `Exame_ID`, `PrecoPago`) VAL
 
 -- Inserções na tabela Trabalha em
 INSERT INTO `mydb`.`Trabalha em` (`Unidade_CNPJ`, `Funcionario_CPF`) VALUES
-('12345678000100', '11111111111'),
 ('12345678000101', '11111111112'),
 ('12345678000102', '11111111113'),
 ('12345678000103', '11111111114'),
@@ -228,5 +227,5 @@ INSERT INTO `mydb`.`Trabalha em` (`Unidade_CNPJ`, `Funcionario_CPF`) VALUES
 ('12345678000111', '11111111122'),
 ('12345678000112', '11111111123'),
 ('12345678000113', '11111111124'),
-('12345678000114', '11111111125');
-
+('12345678000114', '11111111125'),
+('12345678000115', '11111111126');
