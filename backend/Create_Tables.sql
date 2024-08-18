@@ -12,14 +12,14 @@ USE `mydb` ;
 -- Table `mydb`.`Solicitante`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Solicitante` (
-  `CPF` CHAR(11) NOT NULL,
+  `CPF` INT(11) NOT NULL,
   `CRM` INT(6) NOT NULL,
   `Nome` VARCHAR(50) NOT NULL,
   `Logradouro` VARCHAR(40) NOT NULL,
   `Bairro` VARCHAR(30) NULL,
   `Cidade` VARCHAR(30) NOT NULL,
   `Estado` VARCHAR(30) NOT NULL,
-  `CEP` CHAR(8) NOT NULL,
+  `CEP` INT(8) NOT NULL,
   `Numero` INT(4) NOT NULL,
   PRIMARY KEY (`CPF`),
   UNIQUE INDEX `CRM_UNIQUE` (`CRM` ASC) VISIBLE)
@@ -30,13 +30,13 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Paciente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Paciente` (
-  `CPF` CHAR(11) NOT NULL,
+  `CPF` INT(11) NOT NULL,
   `Nome` VARCHAR(50) NOT NULL,
   `Logradouro` VARCHAR(40) NOT NULL,
   `Bairro` VARCHAR(30) NULL,
   `Cidade` VARCHAR(30) NOT NULL,
   `Estado` VARCHAR(30) NOT NULL,
-  `CEP` CHAR(8) NOT NULL,
+  `CEP` INT(8) NOT NULL,
   `Numero` INT(4) NOT NULL,
   PRIMARY KEY (`CPF`))
 ENGINE = InnoDB;
@@ -46,8 +46,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`TelefoneSolicitante`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TelefoneSolicitante` (
-  `Telefone` CHAR(11) NOT NULL,
-  `Solicitante_CPF` CHAR(11) NOT NULL,
+  `Telefone` INT(11) NOT NULL,
+  `Solicitante_CPF` INT(11) NOT NULL,
   PRIMARY KEY (`Telefone`, `Solicitante_CPF`),
   INDEX `fk_TelefoneSolicitante_Solicitante_idx` (`Solicitante_CPF` ASC) VISIBLE,
   CONSTRAINT `fk_TelefoneSolicitante_Solicitante`
@@ -62,8 +62,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`TelefonePaciente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TelefonePaciente` (
-  `Telefone` CHAR(11) NOT NULL,
-  `Paciente_CPF` CHAR(11) NOT NULL,
+  `Telefone` INT(11) NOT NULL,
+  `Paciente_CPF` INT(11) NOT NULL,
   PRIMARY KEY (`Telefone`, `Paciente_CPF`),
   INDEX `fk_TelefonePaciente_Paciente1_idx` (`Paciente_CPF` ASC) VISIBLE,
   CONSTRAINT `fk_TelefonePaciente_Paciente1`
@@ -78,7 +78,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
-  `CPF` CHAR(11) NOT NULL,
+  `CPF` INT(11) NOT NULL,
   `ID` INT(3) NOT NULL,
   `SenhaDeAcesso` VARCHAR(16) NOT NULL,
   `Salario` REAL(10,2) NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
   `Bairro` VARCHAR(30) NULL,
   `Cidade` VARCHAR(30) NOT NULL,
   `Estado` VARCHAR(30) NOT NULL,
-  `CEP` CHAR(8) NOT NULL,
+  `CEP` INT(8) NOT NULL,
   `Numero` INT(4) NOT NULL,
   PRIMARY KEY (`CPF`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC) VISIBLE)
@@ -98,8 +98,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`TelefoneFuncionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TelefoneFuncionario` (
-  `Telefone` CHAR(11) NOT NULL,
-  `Funcionario_CPF` CHAR(11) NOT NULL,
+  `Telefone` INT(11) NOT NULL,
+  `Funcionario_CPF` INT(11) NOT NULL,
   PRIMARY KEY (`Telefone`, `Funcionario_CPF`),
   INDEX `fk_TelefoneFuncionario_Funcionario1_idx` (`Funcionario_CPF` ASC) VISIBLE,
   CONSTRAINT `fk_TelefoneFuncionario_Funcionario1`
@@ -116,9 +116,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Prontuario` (
   `ID` INT(7) NOT NULL,
   `DataDeCadastro` DATE NOT NULL,
-  `Solicitante_CPF` CHAR(11) NOT NULL,
-  `Paciente_CPF` CHAR(11) NOT NULL,
-  `Funcionario_CPF` CHAR(11) NOT NULL,
+  `Solicitante_CPF` INT(11) NOT NULL,
+  `Paciente_CPF` INT(11) NOT NULL,
+  `Funcionario_CPF` INT(11) NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `fk_Prontuario_Solicitante1_idx` (`Solicitante_CPF` ASC) VISIBLE,
   INDEX `fk_Prontuario_Paciente1_idx` (`Paciente_CPF` ASC) VISIBLE,
@@ -145,7 +145,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Laboratorio`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Laboratorio` (
-  `CNPJ` CHAR(14) NOT NULL,
+  `CNPJ` INT(14) NOT NULL,
   `NomeFantasia` VARCHAR(40) NOT NULL,
   `RazaoSocial` VARCHAR(40) NOT NULL,
   `TipoLaboratorio` VARCHAR(6) NOT NULL,
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Laboratorio` (
   `Bairro` VARCHAR(30) NULL,
   `Cidade` VARCHAR(30) NOT NULL,
   `Estado` VARCHAR(30) NOT NULL,
-  `CEP` CHAR(8) NOT NULL,
+  `CEP` INT(8) NOT NULL,
   `Numero` INT(4) NOT NULL,
   PRIMARY KEY (`CNPJ`))
 ENGINE = InnoDB;
@@ -163,15 +163,15 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Unidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Unidade` (
-  `CNPJ` CHAR(14) NOT NULL,
+  `CNPJ` INT(14) NOT NULL,
   `Nome` VARCHAR(40) NOT NULL,
   `Logradouro` VARCHAR(40) NOT NULL,
   `Bairro` VARCHAR(30) NULL,
   `Cidade` VARCHAR(30) NOT NULL,
   `Estado` VARCHAR(30) NOT NULL,
-  `CEP` CHAR(8) NOT NULL,
+  `CEP` INT(8) NOT NULL,
   `Numero` INT(4) NOT NULL,
-  `Laboratorio_CNPJ` CHAR(14) NOT NULL,
+  `Laboratorio_CNPJ` int(14) NOT NULL,
   PRIMARY KEY (`CNPJ`),
   INDEX `fk_Unidade_Laboratorio1_idx` (`Laboratorio_CNPJ` ASC) VISIBLE,
   CONSTRAINT `fk_Unidade_Laboratorio1`
@@ -181,21 +181,17 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Unidade` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `mydb`.`Exame`
--- -----------------------------------------------------
 -- -----------------------------------------------------
 -- Table `mydb`.`Exame`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Exame` (
-  `ID` VARCHAR(6) NOT NULL,
+  `ID` INT(6) NOT NULL,
   `Descricao` VARCHAR(1000) NOT NULL,
   `Setor` VARCHAR(5) NOT NULL,
   `Preco` DECIMAL(10,2) NOT NULL DEFAULT 70.00, -- Valor padrão definido
   `Nome` VARCHAR(30) NOT NULL,
   `Orientacoes` VARCHAR(1000) NOT NULL,
-  `Unidade_CNPJ` CHAR(14) NOT NULL,
+  `Unidade_CNPJ` INT(14) NOT NULL,
   PRIMARY KEY (`ID`),
   INDEX `fk_Exame_Unidade1_idx` (`Unidade_CNPJ` ASC) VISIBLE,
   CONSTRAINT `fk_Exame_Unidade1`
@@ -210,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exame` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TelefoneUnidade` (
   `Telefone` INT NOT NULL,
-  `Unidade_CNPJ` CHAR(14) NOT NULL,
+  `Unidade_CNPJ` INT(14) NOT NULL,
   PRIMARY KEY (`Telefone`, `Unidade_CNPJ`),
   INDEX `fk_TelefoneUnidade_Unidade1_idx` (`Unidade_CNPJ` ASC) VISIBLE,
   CONSTRAINT `fk_TelefoneUnidade_Unidade1`
@@ -226,7 +222,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TelefoneLaboratorio` (
   `Telefone` INT NOT NULL,
-  `Laboratorio_CNPJ` CHAR(14) NOT NULL,
+  `Laboratorio_CNPJ` INT(14) NOT NULL,
   PRIMARY KEY (`Telefone`, `Laboratorio_CNPJ`),
   INDEX `fk_TelefoneLaboratorio_Laboratorio1_idx` (`Laboratorio_CNPJ` ASC) VISIBLE,
   CONSTRAINT `fk_TelefoneLaboratorio_Laboratorio1`
@@ -242,7 +238,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Composto por` (
   `Prontuario_ID` INT(7) NOT NULL,
-  `Exame_ID` VARCHAR(6) NOT NULL,
+  `Exame_ID` INT(6) NOT NULL,
   `PrecoPago` REAL(6,2) NOT NULL,
   PRIMARY KEY (`Prontuario_ID`, `Exame_ID`),
   INDEX `fk_Prontuario_has_Exame_Exame1_idx` (`Exame_ID` ASC) VISIBLE,
@@ -264,8 +260,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Trabalha em`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Trabalha em` (
-  `Unidade_CNPJ` CHAR(14) NOT NULL,
-  `Funcionario_CPF` CHAR(11) NOT NULL,
+  `Unidade_CNPJ` INT(14) NOT NULL,
+  `Funcionario_CPF` INT(11) NOT NULL,
   PRIMARY KEY (`Unidade_CNPJ`, `Funcionario_CPF`),
   INDEX `fk_Unidade_has_Funcionario_Funcionario1_idx` (`Funcionario_CPF` ASC) VISIBLE,
   INDEX `fk_Unidade_has_Funcionario_Unidade1_idx` (`Unidade_CNPJ` ASC) VISIBLE,
