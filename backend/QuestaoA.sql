@@ -15,7 +15,7 @@ CHANGE COLUMN 'Logradouro' 'Endereco' VARCHAR(50) NOT NULL;
 ----------------------------------------------------------
 
 -- Criar tabela extra
-CREATE TABLE IF NOT WXOSTS 'ExtraTable' (
+CREATE TABLE IF NOT EXISTS 'ExtraTable' (
     'Id' INT AUTO_INCREMENT NOT NULL,
     'Descricao' VARCHAR(100),
     PRIMARY KEY ('Id')
