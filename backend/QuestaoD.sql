@@ -18,8 +18,11 @@ UPDATE Exame
 SET Status = 'Concluído'
 WHERE Preco < '80.00';
 
--- Exemplo 5: Atualização de dados aninhada entre Paciente e Solicitante
-UPDATE Paciente p
-JOIN Solicitante s ON p.CPF = s.CPF
-SET p.Nome = 'Aladina Alberta'
-WHERE s.Estado = 'Estado B';
+-- Exemplo 5: Atualizar nomes de pacientes com base em informações na tabela Solicitante
+UPDATE `Paciente`
+SET `Nome` = 'Aladina Alberta'
+WHERE `CPF` IN (
+    SELECT `CPF`
+    FROM `Solicitante`
+    WHERE `Estado` = 'Estado B'
+);
