@@ -174,25 +174,27 @@ INSERT INTO `mydb`.`Prontuario` (`ID`, `DataDeCadastro`, `Solicitante_CPF`, `Pac
 (12, '2024-08-18', '12345678924', '98765432111', '11111111122'),
 (13, '2024-08-18', '12345678926', '98765432112', '11111111123'),
 (14, '2024-08-18', '12345678928', '98765432113', '11111111124'),
-(15, '2024-08-18', '12345678930', '98765432114', '11111111125');
+(15, '2024-08-18', '12345678930', '98765432114', '11111111125'),
+(16, '2023-08-15', '12345678930', '98765432114', '11111111125'),
+(17, '2023-07-12', '12345678930','98765432114', '11111111125');
 
 -- Inserções na tabela Exame
 INSERT INTO `mydb`.`Exame` (`ID`, `Descricao`, `Setor`, `Preco`, `Nome`, `Orientacoes`, `Unidade_CNPJ`) VALUES
-('EX001', 'Exame de Sangue Completo', 'LAB', 70.00, 'Hemograma', 'Jejum de 12 horas', '12345678000101'),
+('EX001', 'Exame de Sangue Completo', 'LAB', 80.00, 'Hemograma', 'Jejum de 12 horas', '12345678000101'),
 ('EX002', 'Exame de Urina', 'LAB', 70.00, 'Urocultura', 'Coletar a primeira urina da manhã', '12345678000102'),
-('EX003', 'Ultrassonografia Abdominal', 'IMAG', 70.00, 'Ultrassom Abdominal', 'Não comer 6 horas antes do exame', '12345678000103'),
-('EX004', 'Exame de Colesterol', 'LAB', 70.00, 'Perfil Lipídico', 'Jejum de 12 horas', '12345678000104'),
-('EX005', 'Exame de Glicemia', 'LAB', 70.00, 'Glicemia em Jejum', 'Jejum de 8 horas', '12345678000101'),
-('EX006', 'Radiografia Torácica', 'IMAG', 70.00, 'Raio-X do Tórax', 'Sem preparação necessária', '12345678000101'),
-('EX007', 'Teste de Função Hepática', 'LAB', 70.00, 'Função Hepática', 'Não comer alimentos gordurosos 24 horas antes', '12345678000103'),
+('EX003', 'Ultrassonografia Abdominal', 'IMAG', 90.00, 'Ultrassom Abdominal', 'Não comer 6 horas antes do exame', '12345678000103'),
+('EX004', 'Exame de Colesterol', 'LAB', 85.00, 'Perfil Lipídico', 'Jejum de 12 horas', '12345678000104'),
+('EX005', 'Exame de Glicemia', 'LAB', 75.00, 'Glicemia em Jejum', 'Jejum de 8 horas', '12345678000101'),
+('EX006', 'Radiografia Torácica', 'IMAG', 95.00, 'Raio-X do Tórax', 'Sem preparação necessária', '12345678000101'),
+('EX007', 'Teste de Função Hepática', 'LAB', 80.00, 'Função Hepática', 'Não comer alimentos gordurosos 24 horas antes', '12345678000103'),
 ('EX008', 'Eletrocardiograma', 'LAB', 70.00, 'ECG', 'Descansar por 10 minutos antes do exame', '12345678000101'),
-('EX009', 'Tomografia Computadorizada', 'IMAG', 70.00, 'Tomografia', 'Não comer 4 horas antes do exame', '12345678000101'),
-('EX010', 'Exame de Prostatectomia', 'LAB', 70.00, 'Antígeno Prostático', 'Jejum de 8 horas', '12345678000101'),
-('EX011', 'Exame de Função Renal', 'LAB', 70.00, 'Creatinina e Ureia', 'Jejum de 8 horas', '12345678000102'),
-('EX012', 'Ultrassonografia do Coração', 'IMAG', 70.00, 'Ecocardiograma', 'Não comer 2 horas antes do exame', '12345678000101'),
-('EX013', 'Exame de Vitamina D', 'LAB', 70.00, '25-Hidroxivitamina D', 'Sem preparação necessária', '12345678000104'),
-('EX014', 'Exame de Hormônios', 'LAB', 70.00, 'Perfil Hormonal', 'Jejum de 8 horas', '12345678000105'),
-('EX015', 'Ressonância Magnética', 'IMAG', 70.00, 'RM', 'Não comer 4 horas antes do exame', '12345678000107');
+('EX009', 'Tomografia Computadorizada', 'IMAG', 85.00, 'Tomografia', 'Não comer 4 horas antes do exame', '12345678000101'),
+('EX010', 'Exame de Prostatectomia', 'LAB', 90.00, 'Antígeno Prostático', 'Jejum de 8 horas', '12345678000101'),
+('EX011', 'Exame de Função Renal', 'LAB', 75.00, 'Creatinina e Ureia', 'Jejum de 8 horas', '12345678000102'),
+('EX012', 'Ultrassonografia do Coração', 'IMAG', 80.00, 'Ecocardiograma', 'Não comer 2 horas antes do exame', '12345678000101'),
+('EX013', 'Exame de Vitamina D', 'LAB', 85.00, '25-Hidroxivitamina D', 'Sem preparação necessária', '12345678000104'),
+('EX014', 'Exame de Hormônios', 'LAB', 95.00, 'Perfil Hormonal', 'Jejum de 8 horas', '12345678000105'),
+('EX015', 'Ressonância Magnética', 'IMAG', 100.00, 'RM', 'Não comer 4 horas antes do exame', '12345678000107');
 
 -- Inserções na tabela Composto por
 INSERT INTO `mydb`.`Composto por` (`Prontuario_ID`, `Exame_ID`, `PrecoPago`) VALUES
