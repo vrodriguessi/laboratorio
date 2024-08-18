@@ -10,15 +10,24 @@ WHERE CNPJ = '12345678901234';
 
 -- Exemplo 3: Atualizar o endereço de uma unidade
 UPDATE Unidade
+<<<<<<< HEAD
 SET Logradouro = 'Rua Nova, 150'
+=======
+SET Endereco = 'Rua Nova, 150'
+>>>>>>> 4b162ee2204833cda39fd74eb8a531aa387fd0f0
 WHERE CNPJ = '12345678901234';
 
 -- Exemplo 4: Atualizar o status de todos os exames com preço inferior a R$ 80,00
 UPDATE Exame
+<<<<<<< HEAD
 SET Setor = 'LAB'
 WHERE Preco < 85.00;
 
 select * from Exame;
+=======
+SET Status = 'Concluído'
+WHERE Preco < '80.00';
+>>>>>>> 4b162ee2204833cda39fd74eb8a531aa387fd0f0
 
 -- Exemplo 5: Atualizar nomes de pacientes com base em informações na tabela Solicitante
 UPDATE `Paciente`
@@ -27,4 +36,8 @@ WHERE `CPF` IN (
     SELECT `CPF`
     FROM `Solicitante`
     WHERE `Estado` = 'Estado B'
+<<<<<<< HEAD
 )
+=======
+);
+>>>>>>> 4b162ee2204833cda39fd74eb8a531aa387fd0f0
