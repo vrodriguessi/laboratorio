@@ -1,0 +1,83 @@
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8;
+USE `mydb`;
+
+-- Tabela Solicitante
+CREATE TABLE IF NOT EXISTS `Solicitante` (
+  `CPF` CHAR(11) NOT NULL,
+  `CRM` INT(6) NOT NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `Logradouro` VARCHAR(40) NOT NULL,
+  `Bairro` VARCHAR(30) NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
+  `Estado` VARCHAR(30) NOT NULL,
+  `CEP` CHAR(8) NOT NULL,
+  `Numero` INT(4) NOT NULL,
+  PRIMARY KEY (`CPF`),
+  UNIQUE INDEX `CRM_UNIQUE` (`CRM` ASC) VISIBLE,
+  CONSTRAINT `chk_CEP` CHECK (LENGTH(CEP) = 8)
+) ENGINE=InnoDB;
+
+-- Tabela Paciente
+CREATE TABLE IF NOT EXISTS `Paciente` (
+  `CPF` CHAR(11) NOT NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `Logradouro` VARCHAR(40) NOT NULL,
+  `Bairro` VARCHAR(30) NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
+  `Estado` VARCHAR(30) NOT NULL,
+  `CEP` CHAR(8) NOT NULL DEFAULT '00000000',
+  `Numero` INT(4) NOT NULL,
+  PRIMARY KEY (`CPF`)
+) ENGINE=InnoDB;
+
+-- Tabela Funcionario
+CREATE TABLE IF NOT EXISTS `Funcionario` (
+  `CPF` CHAR(11) NOT NULL,
+  `ID` INT(3) NOT NULL,
+  `SenhaDeAcesso` VARCHAR(16) NOT NULL,
+  `Salario` REAL(10,2) NOT NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `Logradouro` VARCHAR(40) NOT NULL,
+  `Bairro` VARCHAR(30) NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
+  `Estado` VARCHAR(30) NOT NULL,
+  `CEP` CHAR(8) NOT NULL,
+  `Numero` INT(4) NOT NULL,
+  PRIMARY KEY (`CPF`),
+  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC) VISIBLE
+) ENGINE=InnoDB;
+
+-- Tabela Laboratorio
+CREATE TABLE IF NOT EXISTS `Laboratorio` (
+  `CNPJ` CHAR(14) NOT NULL,
+  `NomeFantasia` VARCHAR(40) NOT NULL,
+  `RazaoSocial` VARCHAR(40) NOT NULL,
+  `TipoLaboratorio` VARCHAR(6) NOT NULL,
+  `Logradouro` VARCHAR(40) NOT NULL,
+  `Bairro` VARCHAR(30) NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
+  `Estado` VARCHAR(30) NOT NULL,
+  `CEP` CHAR(8) NOT NULL,
+  `Numero` INT(4) NOT NULL,
+  PRIMARY KEY (`CNPJ`)
+) ENGINE=InnoDB;
+
+-- Tabela Unidade
+CREATE TABLE IF NOT EXISTS `Unidade` (
+  `CNPJ` CHAR(14) NOT NULL,
+  `Nome` VARCHAR(40) NOT NULL,
+  `Logradouro` VARCHAR(40) NOT NULL,
+  `Bairro` VARCHAR(30) NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
+  `Estado` VARCHAR(30) NOT NULL,
+  `CEP` CHAR(8) NOT NULL,
+  `Numero` INT(4) NOT NULL,
+  `Laboratorio_CNPJ` CHAR(14) NOT NULL,
+  PRIMARY KEY (`CNPJ`),
+  INDEX `fk_Unidade_Laboratorio1_idx` (`Laboratorio_CNPJ` ASC) VISIBLE,
+  CONSTRAINT `fk_Unidade_Laboratorio1`
+    FOREIGN KEY (`Laboratorio_CNPJ`)
+    REFERENCES `Laboratorio` (`CNPJ`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE=InnoDB;
