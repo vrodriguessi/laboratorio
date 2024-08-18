@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exame` (
   `ID` VARCHAR(6) NOT NULL,
   `Descricao` VARCHAR(1000) NOT NULL,
   `Setor` VARCHAR(5) NOT NULL,
-  `Preco` DECIMAL(10,2) NOT NULL DEFAULT 50.00, -- Valor padrão definido
+  `Preco` DECIMAL(10,2) NOT NULL DEFAULT 70.00, -- Valor padrão definido
   `Nome` VARCHAR(30) NOT NULL,
   `Orientacoes` VARCHAR(1000) NOT NULL,
   `Unidade_CNPJ` CHAR(14) NOT NULL,
