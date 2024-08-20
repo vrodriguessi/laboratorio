@@ -1,4 +1,6 @@
--- Criação da visão
+-- Views
+-- Criação da visão 'PacienteInfo'
+-- Junta as informações do cliente ao seu telefone, se houver.
 CREATE VIEW `mydb`.`PacienteInfo` AS
 SELECT
   p.CPF AS PacienteCPF,
@@ -21,6 +23,7 @@ ON
 SELECT * FROM `mydb`.`PacienteInfo`;
 
 -- Criação da visão `ExameUnidadeInfo`
+-- Visualização de dados relacionados a exames e suas respectivas unidades
 CREATE VIEW `mydb`.`ExameUnidadeInfo` AS
 SELECT
   e.ID AS ExameID,
@@ -49,6 +52,8 @@ ON
 
 
 -- Criação da visão `ProntuarioDetalhes`
+-- Visão completa dos dados relacionados a prontuários, incluindo o solicitante que
+-- criou o prontuário, o funcionário que o gerenciou e o paciente ao qual ele se refere.
 CREATE VIEW `mydb`.`ProntuarioDetalhes` AS
 SELECT
   p.ID AS ProntuarioID,
@@ -76,4 +81,3 @@ ON
   
   -- Usar a visão 'ProntuarioDetalhes'
   SELECT * FROM `mydb`.`ProntuarioDetalhes`;
-

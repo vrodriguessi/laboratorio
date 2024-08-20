@@ -1,3 +1,4 @@
+-- Triggers
 -- Trigger após inserção
 -- Cria uma nova tabela com o registro de que foi inserido um novo funcionário, guardando a operação, 
 -- o cpf do funcionario que foi inserido, data e a hora.
@@ -23,6 +24,8 @@ INSERT INTO `Funcionario`
 VALUES 
 ('12345678901', 1, 'senha123', 5000, 'João Silva', 'Rua A', 'Bairro B', 'Cidade C', 'Estado D', '12345678', 10);
 
+SELECT * FROM AuditLog;
+
 -- Trigger antes da atualização
 -- Diminui em 5% o salário
 DELIMITER //
@@ -33,6 +36,15 @@ BEGIN
   SET NEW.`Salario` = OLD.`Salario` * 0.95;
 END //
 DELIMITER ;
+
+INSERT INTO `Funcionario` 
+(`CPF`, `ID`, `SenhaDeAcesso`, `Salario`, `Nome`, `Logradouro`, `Bairro`, `Cidade`, `Estado`, `CEP`, `Numero`) 
+VALUES 
+('12345678901', 1, 'senha123', 5000, 'João Silva', 'Rua A', 'Bairro B', 'Cidade C', 'Estado D', '12345678', 10);
+
+UPDATE Funcionario SET Salario = Salario * 1.10 WHERE Nome = 'João Silva';
+
+SELECT * FROM Funcionario WHERE Nome = 'João Silva';
 
 
 -- Trigger antes da exclusão
@@ -54,4 +66,3 @@ DELETE FROM `Funcionario`
 WHERE `CPF` = '12345678901';
 
 SELECT * FROM `AuditLog` WHERE `CPF` = '12345678901';
-

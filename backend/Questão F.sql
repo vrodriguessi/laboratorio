@@ -1,6 +1,7 @@
+-- Consultas
 -- 1. Consulta simples para listar todos os pacientes.
--- Recupera o CPF, nome e data de nascimento de todos os pacientes registrados.
-SELECT CPF, Nome, DataNascimento
+-- Recupera o CPF e o nome de todos os pacientes registrados.
+SELECT CPF, Nome
 FROM Paciente;
 
 -- 2. Consulta simples com cláusula WHERE.
@@ -27,8 +28,10 @@ SELECT COUNT(*) AS TotalExames
 FROM Exame;
 
 -- 6. Consulta com subconsulta e cláusula IN.
--- Consulta todos os exames feitos de acordo com o ID do exame.
-SELECT *
+-- Recupera todos os registros da tabela Prontuario para os quais há um relacionamento na tabela
+-- Composto por que corresponde ao exame com Exame_ID igual a 'EX001'
+-- Ou seja, busca todos os prontuários associados ao exame EX001.
+SELECT * 
 FROM Prontuario
 WHERE ID IN (
     SELECT Prontuario_ID
@@ -47,14 +50,15 @@ GROUP BY l.NomeFantasia;
 
 
 -- 8. Consulta com junção externa (OUTER JOIN).
--- Consulta que retorna uma lista de pacientes e os nomes dos solicitantes associados aos exames.
+-- Recupera os nomes dos pacientes e dos solicitantes associados a prontuários.
 SELECT p.Nome AS PacienteNome, s.Nome AS SolicitanteNome
 FROM `mydb`.`Prontuario` pr
 LEFT JOIN `mydb`.`Paciente` p ON pr.Paciente_CPF = p.CPF
 LEFT JOIN `mydb`.`Solicitante` s ON pr.Solicitante_CPF = s.CPF;
 
 -- 9. Consulta com UNION.
--- Lista todas as cidades onde há exames realizados e onde há unidades de laboratórios, com a contagem de exames para as cidades que possuem exames
+-- Lista todas as cidades onde há exames realizados e onde há unidades de laboratórios, 
+-- com a contagem de exames para as cidades que possuem exames.
 SELECT
     Cidade,
     COUNT(e.ID) AS TotalExames
@@ -87,7 +91,8 @@ GROUP BY
     Cidade;
 
 -- 10. Consulta com subconsulta correlacionada.
--- Consulta com subconsulta correlacionada para listar cidades e o número total de exames realizados, apenas para cidades com mais exames que a média geral.
+-- Consulta com subconsulta correlacionada para listar cidades e o número total de exames
+-- realizados, apenas para cidades com mais exames que a média geral.
 SELECT
     u.Cidade,
     (SELECT COUNT(e.ID)
@@ -119,7 +124,8 @@ HAVING COUNT(e.ID) > 1;
 
 
 -- 12. OR e BETWEEN
--- Listar todos os exames cujo preço está entre R$70,00 e R$80,00 ou que pertencem a uma unidade em "Cidade 110"
+-- Listar todos os exames cujo preço está entre R$70,00 e R$80,00 ou que pertencem
+-- a uma unidade em "Cidade 110"
 SELECT DISTINCT e.*
 FROM Exame e
 LEFT JOIN Unidade u ON e.Unidade_CNPJ = u.CNPJ
@@ -127,7 +133,8 @@ WHERE e.Preco BETWEEN 70.00 AND 85.00
    OR u.Cidade = 'Cidade 110';
    
 -- 13.NOT e IN
--- Listar todas as unidades que possuem exames com preços maiores que qualquer um dos valores especificados (R$80,00) e que não estão localizadas nas cidades 'Cidade 101' e 'Cidade 102'.
+-- Listar todas as unidades que possuem exames com preços maiores que R$80,00
+-- e que não estão localizadas nas cidades 'Cidade 101' e 'Cidade 102'.
 SELECT DISTINCT u.*
 FROM Unidade u
 WHERE u.Cidade NOT IN ('Cidade 101', 'Cidade 102')
@@ -152,7 +159,7 @@ WHERE NOT EXISTS (
 );
 
 -- 14. ALL
--- encontrar todos os pacientes que têm um telefone registrado na tabela TelefonePaciente 
+-- Encontrar todos os pacientes que têm um telefone registrado na tabela TelefonePaciente 
 -- e cujas informações estão presentes na tabela Prontuario.
 SELECT p.CPF, p.Nome
 FROM mydb.Paciente p

@@ -1,8 +1,10 @@
+SET SQL_SAFE_UPDATES = 0;
+-- Exclusões em 5 tabelas
 -- Excluir o funcionário chamado 'Carlos Oliveira'
 DELETE FROM `Funcionario`
-WHERE `Nome` = 'Carlos Oliveira';
+WHERE `Nome` = 'Carlos Lima';
 
-SELECT * FROM `Funcionario` WHERE `Nome` = 'Carlos Oliveira';
+SELECT * FROM `Funcionario` WHERE `Nome` = 'Carlos Lima';
 
 -- Excluir o solicitante com CPF específico
 DELETE FROM `Solicitante`
@@ -36,4 +38,3 @@ SELECT * FROM `Paciente` WHERE `CPF` IN (
     FROM `Prontuario`
     WHERE `DataDeCadastro` < '2024-01-01'
 );
-

@@ -1,3 +1,4 @@
+-- Modificações em 5 tabelas
 -- Exemplo 1: Aumentar o salário do funcionário Carlos Oliveira em 10%
 UPDATE Funcionario
 SET Salario = Salario * 1.10
@@ -27,17 +28,13 @@ SELECT CNPJ, Nome, Logradouro
 FROM Unidade
 WHERE CNPJ = '12345678000101';
 
--- Exemplo 4: Atualizar o status de todos os exames com preço inferior a R$ 80,00
+-- Exemplo 4: Atualizar o setor de todos os exames com preço inferior ou igual a 85.00
 UPDATE Exame
 SET Setor = 'LAB'
 WHERE Preco <= 85.00;
 
 SELECT *
 FROM Exame;
-
-select * from Exame;
-SET Status = 'Concluído'
-WHERE Preco < '80.00';
 
 -- Exemplo 5: Atualizar nomes de pacientes com base em informações na tabela Solicitante
 -- Atualizar o logradouro dos pacientes em uma cidade específica usando uma tabela derivada

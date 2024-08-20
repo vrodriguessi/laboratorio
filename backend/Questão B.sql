@@ -1,3 +1,5 @@
+-- Exemplos de Alter Table e Drop Table
+
 -- Adicionar coluna
 ALTER TABLE `Paciente`
 ADD COLUMN `DataNascimento` DATE NULL;
@@ -23,3 +25,4 @@ CREATE TABLE IF NOT EXISTS `ExtraTable` (
 
 -- Apagar tabela extra
 DROP TABLE IF EXISTS `ExtraTable`;
+
