@@ -4,7 +4,7 @@ ADD COLUMN `DataNascimento` DATE NULL;
 
 -- Modificar coluna
 ALTER TABLE `Funcionario`
-MODIFY COLUMN `Salario` DECIMAL(10,2) NOT NULL;
+MODIFY COLUMN `Salario` DECIMAL(12,2) NOT NULL;
 
 -- Renomear coluna
 ALTER TABLE `Solicitante`
