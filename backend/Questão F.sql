@@ -22,7 +22,7 @@ SELECT CNPJ, NomeFantasia
 FROM Laboratorio
 WHERE NomeFantasia LIKE '%Lab A%';
 
--- 5. Consulta com função agregada.
+-- 5. Consulta com o uso do COUNT
 -- Conta o número total de exames realizados no sistema.
 SELECT COUNT(*) AS TotalExames
 FROM Exame;
@@ -90,30 +90,7 @@ WHERE
 GROUP BY
     Cidade;
 
--- 10. Consulta com subconsulta correlacionada.
--- Consulta com subconsulta correlacionada para listar cidades e o número total de exames
--- realizados, apenas para cidades com mais exames que a média geral.
-SELECT
-    u.Cidade,
-    (SELECT COUNT(e.ID)
-     FROM Exame e
-     JOIN Unidade u2 ON e.Unidade_CNPJ = u2.CNPJ
-     WHERE u2.Cidade = u.Cidade) AS TotalExames
-FROM Unidade u
-GROUP BY u.Cidade
-HAVING TotalExames > (
-    SELECT AVG(ExameCount) 
-    FROM (
-        SELECT
-            u2.Cidade,
-            COUNT(e.ID) AS ExameCount
-        FROM Unidade u2
-        LEFT JOIN Exame e ON u2.CNPJ = e.Unidade_CNPJ
-        GROUP BY u2.Cidade
-    ) AS CidadesExames
-);
-
--- 11. Consulta com função agregada HAVING.
+-- 10. Consulta com função agregada HAVING.
 -- Listar os laboratorios com mais de um exame.
 SELECT l.NomeFantasia, COUNT(e.ID) AS TotalExames
 FROM Laboratorio l
@@ -122,30 +99,16 @@ JOIN Exame e ON u.CNPJ = e.Unidade_CNPJ
 GROUP BY l.NomeFantasia
 HAVING COUNT(e.ID) > 1;
 
-
--- 12. OR e BETWEEN
+-- 11. OR e BETWEEN
 -- Listar todos os exames cujo preço está entre R$70,00 e R$80,00 ou que pertencem
--- a uma unidade em "Cidade 110"
+-- a uma unidade em "Cidade 110".
 SELECT DISTINCT e.*
 FROM Exame e
 LEFT JOIN Unidade u ON e.Unidade_CNPJ = u.CNPJ
 WHERE e.Preco BETWEEN 70.00 AND 85.00
    OR u.Cidade = 'Cidade 110';
-   
--- 13.NOT e IN
--- Listar todas as unidades que possuem exames com preços maiores que R$80,00
--- e que não estão localizadas nas cidades 'Cidade 101' e 'Cidade 102'.
-SELECT DISTINCT u.*
-FROM Unidade u
-WHERE u.Cidade NOT IN ('Cidade 101', 'Cidade 102')
-  AND EXISTS (
-    SELECT 1
-    FROM Exame e
-    WHERE e.Unidade_CNPJ = u.CNPJ
-      AND e.Preco > 80.00
-);
 
--- 13. EXISTS
+-- 12. EXISTS
 -- Obtém solicitantes que só solicitaram exames com preços menores ou iguais a R$80,00.
 SELECT s.Nome AS SolicitanteNome
 FROM `mydb`.`Solicitante` s
@@ -158,24 +121,20 @@ WHERE NOT EXISTS (
     AND e.Preco >= 80.00
 );
 
--- 14. ALL
--- Encontrar todos os pacientes que têm um telefone registrado na tabela TelefonePaciente 
--- e cujas informações estão presentes na tabela Prontuario.
-SELECT p.CPF, p.Nome
-FROM mydb.Paciente p
-WHERE p.CPF = ALL (
-    SELECT tp.Paciente_CPF
-    FROM mydb.TelefonePaciente tp
-    WHERE tp.Telefone IN (
-        SELECT t.Telefone
-        FROM mydb.TelefonePaciente t
-        WHERE t.Paciente_CPF = p.CPF
-    )
-);
+-- 13. ALL
+-- Encontrar todos os exames cujo preço é maior do que todos os preços de exames
+-- realizados na unidade com o CNPJ '12345678000102'.
+	SELECT *
+	FROM Exame
+	WHERE Preco > ALL (
+		SELECT Preco
+		FROM Exame
+		WHERE Unidade_CNPJ = '12345678000102'
+	);
 
--- 15. ANY
--- Subconsulta para obter uma lista de estados com laboratorio de apoio
--- Consulta que seleciona pacientes nos estados retornados pela subconsulta.
+-- 14. ANY
+-- Seleciona todos os pacientes que estão localizados em estados
+-- onde há pelo menos um laboratório do tipo 'apoio'
 SELECT *
 FROM Paciente
 WHERE Estado = ANY (
@@ -184,7 +143,7 @@ WHERE Estado = ANY (
     WHERE TipoLaboratorio = 'apoio'
 );
 
--- 16. IS NULL
+-- 15. IS NULL
 -- Encontrar pacientes sem telefone
 SELECT p.*
 FROM Paciente p
