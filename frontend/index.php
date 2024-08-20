@@ -38,7 +38,7 @@ header("Content-Type: text/html; charset=utf-8", true);
         if (mysqli_num_rows($tabela) == 0) {
         ?>
         <tr><td align="center">Não há nenhum paciente cadastrado.</td></tr>
-        <tr><td align="center"><input type="submit" value="Incluir Paciente"></td></tr>
+        <tr><td align="center"><input type="button" value="Incluir Paciente" onclick="location.href='form_incluir.php'"></td></tr>
         <?php
         } else {
         ?>
@@ -74,7 +74,7 @@ header("Content-Type: text/html; charset=utf-8", true);
         }
         ?>
         <tr bgcolor="grey"><td colspan="30" height="5"></td></tr>
-        <tr><td colspan="9" align="center"><input type="submit" value="Incluir Novo Paciente"></td></tr>
+        <tr><td colspan="9" align="center"><input type="button" value="Incluir Novo Paciente" onclick="location.href='form_incluir.php'"></td></tr>
         <?php
         }
         mysqli_close($con);
